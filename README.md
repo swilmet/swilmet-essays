@@ -1,1 +1,3 @@
-https://swilmet.be/essays/
+A few essays on software development.
+
+https://swilmet.be/
