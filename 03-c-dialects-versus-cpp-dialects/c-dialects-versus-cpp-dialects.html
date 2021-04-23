@@ -1,0 +1,110 @@
+<h1>C dialects versus C++ dialects</h1>
+
+<h2>Introduction</h2>
+
+<p>
+  Some developers say that since the C++ programming language is so large,
+  containing lots of features, each C++ programmer ends up writing code in a
+  different subset of C++, a different <em>dialect</em>.
+</p>
+<p>
+  This essay looks at whether the C language - which contains a much smaller
+  set of core features than C++ - is any better with regards to the "dialects
+  problem".
+</p>
+
+<h2>The core language plus the standard library</h2>
+
+<p>
+  In C, both the core language and the standard library are small. In C++ it's
+  the reverse, the language comes with "batteries included".
+</p>
+<p>
+  When talking about the "dialects problem" of C++, it targets the core
+  language: since the core language contains advanced features, not everybody
+  has the time and willingness to learn everything about C++.
+</p>
+<p>
+  On the other hand the C++ <em>standard library</em> is seen as a big
+  advantage compared to the very minimal C counterpart.
+</p>
+<p>
+  In fact, with the C language the standard library is usually not sufficient
+  in order to write code comfortably.
+</p>
+
+<h2>The need to use an additional foundational library in C</h2>
+
+<p>
+  To develop large-scale pieces of software in C, free software projects and
+  companies have developed - over the years - additional libraries on top of
+  the standard C library, that serve as a more complete foundation.
+</p>
+<p>
+  In the free software world, there are at least a half-dozen of such libraries
+  to choose from:
+</p>
+<ul>
+  <li>
+    <a href="https://gitlab.gnome.org/GNOME/glib">GLib</a>: used by GTK, GNOME,
+    some other free desktops, GStreamer, etc.
+  </li>
+  <li>
+    <a href="https://01.org/ell">ELL</a> (Embedded Linux Library): used by the
+    Wi-Fi daemon <a href="https://iwd.wiki.kernel.org/">iwd</a>.
+  </li>
+  <li>
+    <a href="https://apr.apache.org/">APR</a> (Apache Portable Runtime): used
+    e.g. by Apache httpd and Subversion.
+  </li>
+  <li>
+    <a href="https://c-util.github.io/">C-Util</a> (Common Utility Libraries for C11):
+    used e.g. by <a href="https://github.com/bus1/dbus-broker">dbus-broker</a>.
+  </li>
+  <li>
+    <a href="https://zeromq.org/">ZeroMQ</a> and
+    <a href="http://czmq.zeromq.org/">CZMQ</a> (High-level C Binding for ZeroMQ).
+  </li>
+  <li>
+    What <a href="https://systemd.io/">systemd</a> provides, for example
+    <a href="https://www.freedesktop.org/software/systemd/man/sd-bus.html">sd-bus</a>,
+    <a href="https://www.freedesktop.org/software/systemd/man/sd-event.html">sd-event</a>,
+    etc.
+  </li>
+</ul>
+
+<h2>C dialects</h2>
+<p>
+  The problem is that these additional foundational C libraries are not
+  standard, they widely differ in their APIs.
+</p>
+<p>
+  In C, a lot of things are done through function calls. Depending on the
+  foundational library used, the programming style can vary a lot. So it
+  creates different dialects.
+</p>
+
+<h2>Conclusion and opinion</h2>
+
+<p>
+  Here is how I view it: while in C++ the dialects come from the use of
+  different <em>subsets</em> of the <em>core language</em>, in C the dialects
+  come from the use of different <em>supersets</em> of the <em>standard
+  library</em>.
+</p>
+<p>
+  If you know the bases of the C++ core language, and are familiar with the C++
+  standard library, then the style differs less from one project to another,
+  from one company to another. As a consequence, from the programmer's point of
+  view, it's easier to switch jobs where the primary language is C++; and from
+  the company's point of view, it's potentially easier to hire and train
+  developers.
+</p>
+<p>
+  In C, it's almost like the need to learn completely different stdlibs each
+  time you work in a different community/company.
+</p>
+<p>
+  <em>P.S.</em>: that said, nothing is ever perfect in the software world.<br />
+  <em>P.P.S.</em>: insert here a few words about Rust.
+</p>
